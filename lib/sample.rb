@@ -1,37 +1,29 @@
-puts "Hello World"
 
-puts "こんにちわ\nさようなら"
-puts 'こんにちわ\nさようなら'
-
-name = "Alice"
-
-puts "Hello #{name}!"
-
-data = nil
-if data
-  puts "データがあります"
-else
-  puts "データがありません"
-end
-
-country = 'italy'
-
-greeting = 
-  if country == 'japan'
-    'こんにちわ'
-  elsif country == 'us'
-    'Hello'
-  elsif country == 'italy'
-    'ciao'
-  else
-    '???'
+  def greeting(country = "japan")
+    if country == "japan"
+      "こんにちわ"
+    else country == "us"
+      "hello"
+    end
   end
 
   puts greeting
+  puts greeting("us")
 
-  point = 7
-  day = 1
-  point *= 5 if day == 1
-  puts point
+  def foo(time = Time.now, message = bar )
+    puts "time: #{time}, message: #{message}"
+  end
+
+  def bar
+    "BAR"
+  end
+
+  puts foo
+
+  def multiple_of_three?(n)
+    n % 3 == 0
+  end
+  puts multiple_of_three?(4)
+  puts multiple_of_three?(6)
 
   
