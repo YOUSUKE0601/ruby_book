@@ -17,6 +17,7 @@ puts fizz_buzz(4)
 puts fizz_buzz(5)
 puts fizz_buzz(6)
 puts fizz_buzz(15)
+puts fizz_buzz(16)
 
 
 
