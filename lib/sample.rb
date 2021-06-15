@@ -1,29 +1,42 @@
+numbers = [1, 2, 3, 4]
+sum = 0
 
-  def greeting(country = "japan")
-    if country == "japan"
-      "こんにちわ"
-    else country == "us"
-      "hello"
-    end
-  end
+numbers.each do |n|
+  sum_value = n.even? ? n * 10 : n
+  sum += sum_value
+end
 
-  puts greeting
-  puts greeting("us")
+puts sum
 
-  def foo(time = Time.now, message = bar )
-    puts "time: #{time}, message: #{message}"
-  end
 
-  def bar
-    "BAR"
-  end
+new_numbers = numbers.map { |n| n * 10}
+puts new_numbers
 
-  puts foo
+def liquid?(temperature)
+  (0...100).include?(temperature)
+end
 
-  def multiple_of_three?(n)
-    n % 3 == 0
-  end
-  puts multiple_of_three?(4)
-  puts multiple_of_three?(6)
+puts liquid?(-1)
+puts liquid?(0)
+puts liquid?(99)
+puts liquid?(100)
 
+def charge(age)
+  case age
   
+  when 0..5
+     0
+  when 6..12
+     300
+  when 13..18
+     600
+  else
+     1000
+  end
+end
+
+puts charge(3)
+puts charge(12)
+puts charge(16)
+puts charge(25)
+
