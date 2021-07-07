@@ -1,25 +1,41 @@
+module Loggable
+
+  def log(text)
+    puts "[LOG] #{text}"
+  end
+end
+
+class Product
+  
+extend Loggable
+
+  
+  def self.create_products(names)
+    log 'create_products is called.'
+    'A great movie'
+  end
+
+
+end
+
 class User
-  def initialize(name)
-    @name = name
+
+include Loggable
+
+  def name
+    log 'name is called.'
+    'Alice'
   end
 
-  def self.create_users(names)
-    names.map do |name|
-      User.new(name)
-    end
-  end
-
-  def hello
-    "Hello, I am #{@name}."
-  end
 end
 
-names = ["Alice", "Bob", "Carol"]
+puts Product.create_products([])
+puts Product.log('Hello.')
 
-users = User.create_users(names)
-users.each do |user|
-  puts user.hello
-end
+user = User.new
+puts user.name
+
+
 
 
 
